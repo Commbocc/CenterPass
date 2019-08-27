@@ -6,12 +6,39 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>hc-centerpass</title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@hcflgov/vue-html-wrapper@3.0.0-0/dist/HcHtmlWrapper.css"> -->
+    <link rel="stylesheet" href="https://www.hillsboroughcounty.org/assets/css/vendor?v=QID2bUIAtfWCxxWSwQ2j26PN-OBNmTBYAoJNGdkM9t81">
+    <link rel="stylesheet" href="https://www.hillsboroughcounty.org/bundles/appstyles?v=RtmPRySLzRBR4KCH-k051Odh0tF5VfImFi6XhM9KKgU1">
+    <link rel="stylesheet" href="https://www.hillsboroughcounty.org/library/web/css/fixes.css">
   </head>
   <body>
     <noscript>
       <strong>We're sorry but hc-centerpass doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+
+    <div class="container py-5">
+
+<div class="row">
+  <div class="hidden-xs col-sm-4 hc-left-nav">
+    <hr>
+  </div>
+  <div class="col-sm-8 hc-content-with-left-nav ">
+    <div id="app">
+
+      <div is="CustomerValidation"></div>
+
+      <hr>
+
+      <div is="WaitTimes"></div>
+
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
     <!-- built files will be auto injected -->
   </body>
 </html>
