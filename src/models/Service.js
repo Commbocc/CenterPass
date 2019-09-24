@@ -22,20 +22,22 @@ export default class Service {
   }
 
   get averageWaitTime () {
-    return parseInt(this.stats.AvgWT)
+    let waitSecs = parseInt(this.stats.AvgWT)
+    return moment.duration(waitSecs, 'seconds').humanize()
   }
 
-  get apprxWaitTime () {
-    let apprxWaitInSeconds = (this.customersInLine * this.averageWaitTime)
-    return moment.duration(apprxWaitInSeconds, 'seconds').humanize()
-  }
+  // get apprxWaitTime () {
+  //   let apprxWaitInSeconds = (this.customersInLine * this.averageWaitTime)
+  //   return moment.duration(apprxWaitInSeconds, 'seconds').humanize()
+  // }
 
   static getServices () {
     return axios(process.env.VUE_APP_IWT_URL)
     .then(res => xml2js(res.data, {compact: true}))
     .then(json => {
       // console.log(json)
-      return json.Unit.Service.map(x => new Service(x))
+      let services = json.Unit.Service.map(x => new Service(x))
+      return services.sort((a, b) => (a.name > b.name) ? 1 : -1)
     })
   }
 

@@ -14,7 +14,7 @@
             <!-- <th>Total Served</th> -->
             <!-- <th>Average Wait Time</th> -->
             <!-- <th>Max Wait Time</th> -->
-            <th class="text-center">Apprx. <wbr> Wait Time</th>
+            <th class="text-center">Average <wbr> Wait Time</th>
           </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
 
             <!-- <td>{{ service.stats.MaxWT }}</td> -->
 
-            <td class="text-center">{{ service.apprxWaitTime }}</td>
+            <td class="text-center">{{ service.averageWaitTime }}</td>
           </tr>
         </tbody>
       </table>
