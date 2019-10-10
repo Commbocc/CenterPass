@@ -26,6 +26,11 @@ export default class Service {
     return moment.duration(waitSecs, 'seconds').humanize()
   }
 
+  get maxWaitTime () {
+    let waitSecs = parseInt(this.stats.MaxWT)
+    return moment.duration(waitSecs, 'seconds').humanize()
+  }
+
   // get apprxWaitTime () {
   //   let apprxWaitInSeconds = (this.customersInLine * this.averageWaitTime)
   //   return moment.duration(apprxWaitInSeconds, 'seconds').humanize()

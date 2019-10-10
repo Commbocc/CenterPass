@@ -28489,12 +28489,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var CustomerValidation = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1ddfbfc6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/WaitTimes.vue?vue&type=template&id=08c6891a&
-var WaitTimesvue_type_template_id_08c6891a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[(_vm.loading)?_c('div',{staticClass:"border p-5"},[_c('p',{staticClass:"h3 font-italic text-center"},[_vm._v("Loading Wait Times...")])]):_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped table-bordered table-sm"},[_vm._m(0),_c('tbody',_vm._l((_vm.services),function(service){return _c('tr',{key:service.id},[_c('td',[_vm._v(_vm._s(service.name))]),_c('td',{staticClass:"text-center"},[_vm._v(_vm._s(service.customersInLine))]),_c('td',{staticClass:"text-center"},[_vm._v(_vm._s(service.averageWaitTime))])])}),0)])])])}
-var WaitTimesvue_type_template_id_08c6891a_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Service")]),_c('th',{staticClass:"text-center"},[_vm._v("Customers "),_c('wbr'),_vm._v(" in Line")]),_c('th',{staticClass:"text-center"},[_vm._v("Average "),_c('wbr'),_vm._v(" Wait Time")])])])}]
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1ddfbfc6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/WaitTimes.vue?vue&type=template&id=08b011a3&
+var WaitTimesvue_type_template_id_08b011a3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[(_vm.loading)?_c('div',{staticClass:"border p-5"},[_c('p',{staticClass:"h3 font-italic text-center"},[_vm._v("Loading Wait Times...")])]):_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped table-bordered table-sm"},[_vm._m(0),_c('tbody',_vm._l((_vm.services),function(service){return _c('tr',{key:service.id},[_c('td',[_vm._v(_vm._s(service.name))]),_c('td',{staticClass:"text-center"},[_vm._v(_vm._s(service.customersInLine))]),_c('td',{staticClass:"text-center"},[_vm._v(_vm._s(service.maxWaitTime))])])}),0)])])])}
+var WaitTimesvue_type_template_id_08b011a3_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Service")]),_c('th',{staticClass:"text-center"},[_vm._v("Customers "),_c('wbr'),_vm._v(" in Line")]),_c('th',{staticClass:"text-center"},[_vm._v("Wait Time")])])])}]
 
 
-// CONCATENATED MODULE: ./src/components/WaitTimes.vue?vue&type=template&id=08c6891a&
+// CONCATENATED MODULE: ./src/components/WaitTimes.vue?vue&type=template&id=08b011a3&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
@@ -28577,6 +28577,12 @@ function () {
     key: "averageWaitTime",
     get: function get() {
       var waitSecs = parseInt(this.stats.AvgWT);
+      return moment_default.a.duration(waitSecs, 'seconds').humanize();
+    }
+  }, {
+    key: "maxWaitTime",
+    get: function get() {
+      var waitSecs = parseInt(this.stats.MaxWT);
       return moment_default.a.duration(waitSecs, 'seconds').humanize();
     } // get apprxWaitTime () {
     //   let apprxWaitInSeconds = (this.customersInLine * this.averageWaitTime)
@@ -28693,8 +28699,8 @@ function () {
 
 var WaitTimes_component = normalizeComponent(
   components_WaitTimesvue_type_script_lang_js_,
-  WaitTimesvue_type_template_id_08c6891a_render,
-  WaitTimesvue_type_template_id_08c6891a_staticRenderFns,
+  WaitTimesvue_type_template_id_08b011a3_render,
+  WaitTimesvue_type_template_id_08b011a3_staticRenderFns,
   false,
   null,
   null,
